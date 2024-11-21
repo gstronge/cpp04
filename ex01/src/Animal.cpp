@@ -15,6 +15,7 @@
 Animal::Animal()
 {
 	std::cout << "Animal default constructor called\n";
+	animal_brain = new Brain();
 }
 
 Animal::Animal(const Animal& other_obj) : type(other_obj.type)
@@ -24,7 +25,8 @@ Animal::Animal(const Animal& other_obj) : type(other_obj.type)
 
 Animal::~Animal()
 {
-	std::cout << "Animal destructor called\n";
+	delete animal_brain;
+	std::cout << "Animal destructed\n";
 }
 
 Animal&	Animal::operator=(const Animal& other_obj)
@@ -43,4 +45,19 @@ void Animal::makeSound() const
 std::string Animal::getType() const
 {
 	return (type);
+}
+
+const std::string&	Animal::getIdea(const int idea_no)
+{
+	static const std::string	error_message = "idea_no not in range of 0-99";
+
+	if (idea_no >= 0 && idea_no < 100)
+		return (animal_brain->ideas[idea_no]);
+	return(error_message);
+}
+
+void	Animal::setIdea(const std::string& new_idea, const int idea_no)
+{
+	if (idea_no >= 0 && idea_no < 100)
+		animal_brain->ideas[idea_no] = new_idea;
 }

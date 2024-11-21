@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gstronge <gstronge@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 22:41:55 by gstronge          #+#    #+#             */
-/*   Updated: 2024/11/20 22:41:55 by gstronge         ###   ########.fr       */
+/*   Created: 2024/11/11 11:01:40 by gstronge          #+#    #+#             */
+/*   Updated: 2024/11/11 11:01:40 by gstronge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef	CAT_HPP
-# define	CAT_HPP
+# ifndef	DOG_HPP
+# define	DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 #include <iostream>
 
-class Cat : public Animal
+class Dog : public Animal
 {
 public:
-	Cat();
-	Cat(const Cat& other_obj);
-	~Cat();
+	Dog();
+	Dog(const Dog& other_obj);
+	~Dog();
 
-	Cat&	operator=(const Cat& other_obj);
-	void	makeSound() const override;
+	Dog&	operator=(const Dog& other_obj);
+	void	makeSound() const;
 };
 
 # endif

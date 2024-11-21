@@ -15,7 +15,6 @@
 
 #include "Animal.hpp"
 #include <iostream>
-#include <string>
 
 class Dog : public Animal
 {
